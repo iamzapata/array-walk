@@ -1,0 +1,69 @@
+:root {
+  --color-current: red;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+
+.array-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.array-item {
+  position: relative;
+  height: 70px;
+  width: 70px;
+  background: aliceblue;
+  border: solid 2px black;
+  margin: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.array-item.current {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.array-item.current:before {
+  content: "▼";
+  top: -25px;
+  color: var(--color-current);
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.array-item.current:after {
+  content: "";
+  text-align: center;
+  color: var(--color-current);
+  position: absolute;
+  width: 100%;
+  border-bottom: solid 2px currentColor;
+  bottom: -10px;
+}
+
+.text-center {
+  text-align: center;
+}
