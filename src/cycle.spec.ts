@@ -51,9 +51,9 @@ describe("cycle", () => {
   })
 
   it("walks an array forwards", () => {
-    const arrayCycle = cycle(["a", "b", "c", "d"], 2)
+    const arrayCycle = cycle(["a", "b", "c", "d", "e", "f"], 2)
 
-    ;["d", "a", "b", "c", "d", "a", "b"].forEach((letter) =>
+    ;["d", "e", "f", "a", "b", "c", "d", "e", "f", "a", "b", "c", "d"].forEach((letter) =>
       expect(arrayCycle.next()).toEqual(letter)
     )
   })
