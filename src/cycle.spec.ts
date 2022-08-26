@@ -1,40 +1,4 @@
-import {
-  cycleRight,
-  cycleRightModulus,
-  cycleRightStartPoint,
-  cycle,
-} from "./cycle"
-
-describe("cycleRight", () => {
-  it("get next intem in the array, start at index 0", () => {
-    const arrayCycle = cycleRight(["a", "b", "c", "d"])
-
-    ;["b", "c", "d", "a", "b", "c", "d", "a"].forEach((letter) => {
-      expect(arrayCycle.next()).toEqual(letter)
-    })
-  })
-})
-
-describe("cycleRightModulus", () => {
-  it("get next item in the array, starting at index 0", () => {
-    const arrayCycle = cycleRightModulus(["a", "b", "c", "d"])
-
-    ;["b", "c", "d", "a", "b", "c", "d", "a"].forEach((letter) => {
-      expect(arrayCycle.next()).toEqual(letter)
-    })
-  })
-})
-
-describe("cycleRightStartPoint", () => {
-  it("get next item in the array, starting at the specified index", () => {
-    const arrayCycle = cycleRightStartPoint(["a", "b", "c", "d"], 2)
-
-    ;["d", "a", "b", "c", "d", "a", "b", "c"].forEach((letter) => {
-      expect(arrayCycle.next()).toEqual(letter)
-    })
-  })
-})
-
+import { cycle } from "./cycle"
 /* 
   Write a function that takes in two parameters, startIndex and array. 
   It should expose two methods, prev and next. When the methods are invoked, they should
@@ -53,15 +17,15 @@ describe("cycle", () => {
   it("walks an array forwards", () => {
     const arrayCycle = cycle(["a", "b", "c", "d", "e", "f"], 2)
 
-    ;["d", "e", "f", "a", "b", "c", "d", "e", "f", "a", "b", "c", "d"].forEach((letter) =>
-      expect(arrayCycle.next()).toEqual(letter)
+    ;["d", "e", "f", "a", "b", "c", "d", "e", "f", "a", "b", "c", "d"].forEach(
+      (letter) => expect(arrayCycle.next()).toEqual(letter)
     )
   })
 
   it("cycles array backwards", () => {
-    const arrayCycle = cycle(["a", "b", "c", "d"], 2)
+    const arrayCycle = cycle(["a", "b", "c", "d", "e", "f"], 2)
 
-    ;["b", "a", "d", "c", "b", "a", "d", "c", "b"].forEach((letter) =>
+    ;["b", "a", "f", "e", "d", "c", "b", "a", "f", "e"].forEach((letter) =>
       expect(arrayCycle.prev()).toEqual(letter)
     )
   })

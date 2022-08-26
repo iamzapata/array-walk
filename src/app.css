@@ -14,14 +14,19 @@ body {
   min-height: 100vh;
   padding: 1rem;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 100%;
+}
+
+#app > * {
+  grid-column: 2 / 3;
 }
 
 .array-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin-top: 2rem;
 }
 
@@ -66,4 +71,19 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.controls button:first-of-type {
+  margin-left: 0.5rem;
+}
+
+.controls button:last-of-type {
+  margin-right: 0.5rem;
 }
